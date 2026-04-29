@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050100;
+  color: white;
+  font-family: "Space Grotesk", Inter, system-ui, sans-serif;
+}
+
+@keyframes float-soft {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes orbit-glow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.015);
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.45);
+    opacity: 1;
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(260%);
+  }
+}
+
+.float-soft {
+  animation: float-soft 4.5s ease-in-out infinite;
+}
+
+.orbit-glow {
+  animation: orbit-glow 4s ease-in-out infinite;
+}
+
+.pulse-dot {
+  animation: pulse-dot 2.2s ease-in-out infinite;
+}
+
+.scan-bar {
+  animation: scan 1.2s linear infinite;
+}
+
+.prose {
+  line-height: 1.75;
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(-120px) translateY(80px) rotate(-18deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(520px) translateY(-180px) rotate(-18deg);
+    opacity: 0;
+  }
+}
+
+.shooting-star {
+  position: absolute;
+  width: 180px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, #ffb347, #ff5a00);
+  filter: drop-shadow(0 0 10px rgba(255, 122, 26, 0.8));
+  animation: shooting-star 4.8s ease-in-out infinite;
+}
+
+.shooting-star.delay-1 {
+  animation-delay: 1.6s;
+}
+
+.shooting-star.delay-2 {
+  animation-delay: 3.1s;
+}
+
+@keyframes nova-fly {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-3deg);
+  }
+  25% {
+    transform: translate3d(-18px, -16px, 0) rotate(4deg);
+  }
+  50% {
+    transform: translate3d(10px, -26px, 0) rotate(-2deg);
+  }
+  75% {
+    transform: translate3d(20px, -8px, 0) rotate(3deg);
+  }
+}
+
+@keyframes nova-thinking {
+  0%, 100% {
+    transform: scaleY(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scaleY(1.8);
+    opacity: 1;
+  }
+}
+
+@keyframes nova-trail {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scaleX(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleX(1.25);
+  }
+}
+
+.nova-fly {
+  animation: nova-fly 9s ease-in-out infinite;
+}
+
+.nova-trail {
+  animation: nova-trail 1.8s ease-in-out infinite;
+}
+
+@keyframes orbit-loader {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.65;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.orbit-loader {
+  animation: orbit-loader 1.4s linear infinite;
+}
+
+@keyframes nova-thinking-bars {
+  0%, 100% {
+    transform: scaleY(0.55);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: scaleY(1.25);
+    opacity: 1;
+  }
+}
+
+.nova-thinking-bar {
+  transform-origin: center bottom;
+  animation: nova-thinking-bar-pulse 0.85s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes nova-thinking-bar-pulse {
+  0%, 100% {
+    transform: scaleY(0.45);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scaleY(1.35);
+    opacity: 1;
+  }
+}
